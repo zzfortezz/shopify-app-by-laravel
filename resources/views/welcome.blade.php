@@ -2,6 +2,11 @@
 
 @section('content')
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
+    <div class="container-fluid">
+        <div class="section-header">
+            <a class="btn btn-primary">Add Size</a>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
@@ -14,6 +19,7 @@
             ShopifyApp.Bar.initialize({
                 title: 'Welcome'
             })
+
         });
     </script>
 @endsection
