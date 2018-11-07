@@ -1,13 +1,12 @@
 @extends('shopify-app::layouts.default')
 @section('styles')
     @parent
-    <link rel="stylesheet" href="css/style.scss">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.scss">
 @endsection
 @section('content')
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
-    <div class="container-fluid">
+    <div class="container">
         <div class="section-header">
             <a class="btn btn-primary">Add Size</a>
         </div>
