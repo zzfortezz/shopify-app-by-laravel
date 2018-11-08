@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-bottom">
+            <div class="fixed-bottom section-footer">
                 <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
