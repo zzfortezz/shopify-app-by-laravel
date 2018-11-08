@@ -21,9 +21,12 @@
                 <div class="section-content">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label for="title-table">Title</label>
+                            <input type="text" class="form-control" id="title-table" placeholder="ex: T-shirt size">
+                        </div>
+                        <div class="form-group">
+                            <label for="tab-description">Description</label>
+                            <textarea class="form-control" id="tab-description" rows="4"></textarea>
                         </div>
                     </form>
                 </div>
@@ -34,7 +37,7 @@
 
 @section('scripts')
     @parent
-
+    <script src="libs/tinymce/js/tinymce/tinymce.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -45,6 +48,9 @@
             ShopifyApp.Bar.initialize({
                 title: 'Welcome'
             })
+            tinymce.init({
+                selector: '#tab-description'
+            });
 
         });
     </script>
