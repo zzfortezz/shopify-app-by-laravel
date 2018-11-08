@@ -57,10 +57,10 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="form-group">
-                                        <input type="text" id="" name="text-display" class="form-control">
+                                        <input type="text" id="" name="text-display" class="form-control" autocomplete="false">
                                     </div>
                                 </div>
-                                
+
                                 <legend class="col-form-label col-sm-3 pt-0"> Open guide with:
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </legend>
@@ -90,6 +90,9 @@
                         </fieldset>
                     </div>
                 </div>
+            </div>
+            <div class="fixed-bottom">
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </form>
     </div>
