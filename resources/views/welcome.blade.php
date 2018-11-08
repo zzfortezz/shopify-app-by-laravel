@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
-    <div class="container">
+    <div class="container-fluid">
         <div class="section-header">
             <a class="btn btn-primary">Add Size</a>
         </div>
@@ -28,11 +28,11 @@
                         </div>
                         <div class="form-group">
                             <label for="table-size-description">Description</label>
-                            <textarea class="form-control" id="table-size-description" rows="4"></textarea>
+                            <textarea class="form-control" id="table-size-description" rows="5"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="table-size">Description</label>
-                            <textarea class="form-control" id="table-size" rows="4">
+                            <textarea class="form-control" id="table-size" rows="3">
                                 [["Size","Bust","Waist","Hips"],["8","32","25","35"],["10","34","27","37"],["12","36","29","39"]]
                             </textarea>
                         </div>
@@ -59,6 +59,7 @@
             })
             tinymce.init({
                 selector: '#table-size-description',
+                plugins: 'image',
                 branding: false // To disable "Powered by TinyMCE" branding: false // To disable "Powered by TinyMCE"
             });
 
