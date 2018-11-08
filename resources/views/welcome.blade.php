@@ -13,42 +13,62 @@
             <a class="btn btn-primary">Add Size</a>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="section-summary">
-                    <h2>Select Currencies</h2>
-                    <p>Select the currencies that will appear in the Currency Switcher on your website.</p>
+            <form>
+                <div class="col-md-4">
+                    <div class="section-summary">
+                        <h2>Select Currencies</h2>
+                        <p>Select the currencies that will appear in the Currency Switcher on your website.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="section-content">
-                    <form>
-                        <div class="form-group">
-                            <label for="title-table">Title</label>
-                            <input type="text" class="form-control" id="title-table" placeholder="ex: T-shirt size">
-                        </div>
-                        <div class="form-group">
-                            <label for="table-size-description">Description</label>
-                            <textarea class="form-control" id="table-size-description" rows="5"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="table-size">Description</label>
-                            <textarea class="form-control" id="table-size" rows="3">
-                                [["Size","Bust","Waist","Hips"],["8","32","25","35"],["10","34","27","37"],["12","36","29","39"]]
-                            </textarea>
-                        </div>
-                    </form>
+                <div class="col-md-8">
+                    <div class="section-content">
+
+                            <div class="form-group">
+                                <label for="title-table">Title</label>
+                                <input type="text" class="form-control" id="title-table" placeholder="ex: T-shirt size">
+                            </div>
+                            <div class="form-group">
+                                <label for="table-size-description">Description</label>
+                                <textarea class="form-control" id="table-size-description" rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="table-size">Description</label>
+                                <textarea class="form-control" id="table-size" rows="3">
+                                    [["Size","Bust","Waist","Hips"],["8","32","25","35"],["10","34","27","37"],["12","36","29","39"]]
+                                </textarea>
+                            </div>
+
+                    </div>
                 </div>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-md-4">
-                <div class="section-summary">
-                    <h2>Size guide settings</h2>
-                    <p>Select the currencies that will appear in the Currency Switcher on your website.</p>
+                <div class="w-100 my-4"></div>
+                <div class="col-md-4">
+                    <div class="section-summary">
+                        <h2>Size guide settings</h2>
+                        <p>Select the currencies that will appear in the Currency Switcher on your website.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div class="section-content"></div>
-            </div>
+                <div class="col-md-8">
+                    <div class="section-content">
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0"> Open guide with:
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </legend>
+                                <div class="col-sm-10">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Link</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">Button</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
