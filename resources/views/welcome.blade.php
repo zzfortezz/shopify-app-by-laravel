@@ -51,10 +51,20 @@
                     <div class="section-content">
                         <fieldset class="form-group">
                             <div class="row">
-                                <legend class="col-form-label col-sm-2 pt-0"> Open guide with:
+
+                                <legend class="col-form-label col-sm-3 pt-0"> Text:
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </legend>
-                                <div class="col-sm-10">
+                                <div class="col-sm-9">
+                                    <div class="form-group">
+                                        <input type="text" id="" name="text-display" class="form-control">
+                                    </div>
+                                </div>
+                                
+                                <legend class="col-form-label col-sm-3 pt-0"> Open guide with:
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </legend>
+                                <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio1">Link</label>
@@ -64,6 +74,18 @@
                                         <label class="custom-control-label" for="customRadio2">Button</label>
                                     </div>
                                 </div>
+
+                                <legend class="col-form-label col-sm-3 pt-0"> Position display
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </legend>
+                                <div class="col-sm-9">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Link</label>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </fieldset>
                     </div>
