@@ -39,6 +39,16 @@
                     </form>
                 </div>
             </div>
+            <div class="w-100"></div>
+            <div class="col-md-4">
+                <div class="section-summary">
+                    <h2>Size guide settings</h2>
+                    <p>Select the currencies that will appear in the Currency Switcher on your website.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="section-content"></div>
+            </div>
         </div>
     </div>
 @endsection
