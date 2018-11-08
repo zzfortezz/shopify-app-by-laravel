@@ -12,8 +12,8 @@
         <div class="section-header">
             <a class="btn btn-primary">Add Size</a>
         </div>
-        <div class="row">
-            <form>
+        <form>
+            <div class="row">
                 <div class="col-md-4">
                     <div class="section-summary">
                         <h2>Select Currencies</h2>
@@ -40,7 +40,7 @@
 
                     </div>
                 </div>
-                <div class="w-100 my-4"></div>
+                <div class="w-100 my-4 border-top"></div>
                 <div class="col-md-4">
                     <div class="section-summary">
                         <h2>Size guide settings</h2>
@@ -68,8 +68,8 @@
                         </fieldset>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 @endsection
 
