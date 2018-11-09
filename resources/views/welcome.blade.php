@@ -12,7 +12,8 @@
         <div class="section-header">
             <a class="btn btn-primary">Add Size</a>
         </div>
-        <form>
+        <form method="get">
+            @csrf
             <div class="row">
                 <div class="col-md-4">
                     <div class="section-summary">
@@ -25,15 +26,15 @@
 
                             <div class="form-group">
                                 <label for="title-table">Title</label>
-                                <input type="text" class="form-control" id="title-table" placeholder="ex: T-shirt size">
+                                <input type="text" class="form-control" name="title" id="title-table" placeholder="ex: T-shirt size">
                             </div>
                             <div class="form-group">
                                 <label for="table-size-description">Description</label>
-                                <textarea class="form-control" id="table-size-description" rows="5"></textarea>
+                                <textarea class="form-control" id="table-size-description" name="" rows="5"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="table-size">Description</label>
-                                <textarea class="form-control" id="table-size" rows="3">
+                                <textarea class="form-control" name="tabel-size" id="table-size" rows="3">
                                     [["Size","Bust","Waist","Hips"],["8","32","25","35"],["10","34","27","37"],["12","36","29","39"]]
                                 </textarea>
                             </div>
