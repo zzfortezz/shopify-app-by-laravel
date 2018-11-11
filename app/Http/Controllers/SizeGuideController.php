@@ -47,7 +47,7 @@ class SizeGuideController extends Controller
 
         $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
 
-        $size =  SizeGuide::where('shop_id', $shop_id)->first();
+        $size =  SizeGuide::where('shop_id', $shop_id->id)->first();
 
         $size->title = $request->title;
         $size->shop_id = $shop_id->id;
