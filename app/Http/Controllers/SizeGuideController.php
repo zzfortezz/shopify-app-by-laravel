@@ -6,7 +6,7 @@ use App\SizeGuide;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
-use OhMyBrew\ShopifyApp as ShopifyApp;
+use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
 
 class SizeGuideController extends Controller
 {
