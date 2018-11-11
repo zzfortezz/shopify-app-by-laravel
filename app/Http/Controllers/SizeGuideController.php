@@ -35,7 +35,10 @@ class SizeGuideController extends Controller
      */
     public function store(Request $request)
     {
-
+        $this->validate( $request,[
+            'title' => 'required|max:255',
+            'tabel-size' => 'array'
+        ] );
         dd($request->all());
     }
 

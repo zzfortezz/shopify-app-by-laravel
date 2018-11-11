@@ -12,6 +12,11 @@
         <div class="section-header">
             <a class="btn btn-primary">Add Size</a>
         </div>
+        @if ( count($errors) > 0 )
+            @foreach( $errors->all() as $error )
+                {{ $error }}
+            @endforeach
+        @endif
         <form method="post" action="{{ route('data.store') }}">
             @csrf
             <div class="row">
@@ -30,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="table-size-description">Description</label>
-                                <textarea class="form-control" id="table-size-description" name="" rows="5"></textarea>
+                                <textarea class="form-control" id="table-size-description" name="description" rows="5"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="table-size">Description</label>
