@@ -18,6 +18,7 @@ class SizeGuideController extends Controller
      */
     public function index()
     {
+        return view('home')->with('sizeguieds', SizeGuide::all() );
         //
     }
 

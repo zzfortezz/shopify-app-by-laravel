@@ -11,13 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware(['auth.shop'])->name('home');
+Route::get('/', [
+    'uses' => 'SizeGuideController@index',
+    'as' => 'home'
+])->middleware(['auth.shop'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
+
+   /* Route::get('/', [
+        'uses' => 'SizeGuideController@index',
+        'as' => 'data.view'
+    ]);*/
+
     //Create route with name is data.crete, and uses controler SizeGuideController and call to function store
-    Route::post('/data/store', ['uses' => 'SizeGuideController@store', 'as' => 'data.store']);
+    Route::post('/data/store', [
+        'uses' => 'SizeGuideController@store',
+        'as' => 'data.store'
+    ]);
 
     Route::get('/data/edit/{id}', [
         'uses' => 'SizeGuideController@edit',
