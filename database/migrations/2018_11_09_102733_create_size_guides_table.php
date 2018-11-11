@@ -15,11 +15,12 @@ class CreateSizeGuidesTable extends Migration
     {
         Schema::create('size_guides', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('shop_id');
             $table->timestamps();
             $table->char('title', 200);
-            $table->longText('description');
-            $table->longText('sizes');
-            $table->foreign('id')->references('id')->on('shops')->onDelete('cascade');
+            $table->longText('description')->nullable();
+            $table->longText('sizes')->nullable();
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
         });
     }
 
