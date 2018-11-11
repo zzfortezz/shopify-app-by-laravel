@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.scss">
 @endsection
 @section('content')
+    <a href="/edit">click</a>
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
     <div class="container-fluid">
         <div class="section-header">
