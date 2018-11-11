@@ -18,7 +18,7 @@ class CreateSizeGuidesTable extends Migration
             $table->timestamps();
             $table->char('title', 200);
             $table->longText('description');
-            $table->json('sizes');
+            $table->longText('sizes');
             $table->foreign('id')->references('id')->on('shops')->onDelete('cascade');
         });
     }
