@@ -16,7 +16,7 @@ Route::get('/', function () {
 })->middleware(['auth.shop'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' =>['auth.shop']], function(){
-    Route::get('/data/create', function(){
+    Route::get('/data/create', ['as' => 'data.create'], function(){
        return "Hello";
     });
 });
