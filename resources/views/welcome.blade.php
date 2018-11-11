@@ -12,7 +12,7 @@
         <div class="section-header">
             <a class="btn btn-primary">Add Size</a>
         </div>
-        <form method="get">
+        <form method="post" action="{{ route('data/create') }}">
             @csrf
             <div class="row">
                 <div class="col-md-4">
