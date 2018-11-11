@@ -14,7 +14,7 @@
         </div>
         @if ( count($errors) > 0 )
             @foreach( $errors->all() as $error )
-                {{ $error }}
+               <div class="alert alert-warning">{{ $error }}</div>
             @endforeach
         @endif
         <form method="post" action="{{ route('data.store') }}">
