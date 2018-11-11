@@ -24,8 +24,8 @@
                             <tr>
                                 <th scope="row">{{ $k }}</th>
                                 <td>{{ $size->title }}</td>
-                                <td><a href=""><i class="fa fa-pencil"></i></a>  </td>
-                                <td><a href=""><i class="fa fa-trash"></i></a> </td>
+                                <td><a href=""><i class="far fa-edit"></i></a>Edit</td>
+                                <td><a href="" class="table-size-text"><i class="fa fa-trash"></i></a>Delete</td>
                             </tr>
                         @endforeach
 
