@@ -46,8 +46,8 @@ class SizeGuideController extends Controller
         $shop_domain = ShopifyApp::shop()->shopify_domain;
 
         $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
-        
-        $size = new SizeGuide;
+
+        $size =  SizeGuide::where('shop_id', $shop_id)->first();
 
         $size->title = $request->title;
         $size->shop_id = $shop_id->id;
@@ -56,7 +56,7 @@ class SizeGuideController extends Controller
         $size->save();
 
 
-        return redirect('home');
+        return redirect()->route('home');
     }
 
     /**
