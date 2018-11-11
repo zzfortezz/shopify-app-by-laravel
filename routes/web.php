@@ -23,6 +23,5 @@ Route::group(['prefix' => 'admin', 'middleware' =>['auth.shop']], function(){
 
 Route::post('/data/store', function () {
 //    return view('welcome');
-    $a= 'av23';
-    dd(a);
+   return "a";
 })->middleware(['auth.shop']);
