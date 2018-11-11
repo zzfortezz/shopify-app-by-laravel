@@ -22,5 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' =>['auth.shop']], function(){
 //Route::post('/data/store', ['uses' => 'SizeGuideController@store ', 'as' => 'data.create']);
 
 Route::post('/data/store', function () {
-    return view('welcome');
+//    return view('welcome');
+    $a= 'av23';
+    dd(a);
 })->middleware(['auth.shop']);
