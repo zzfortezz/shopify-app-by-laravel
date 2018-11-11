@@ -4,9 +4,6 @@
     <a href="/shopify-app-by-laravel/edit">click</a>
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
     <div class="container-fluid">
-        <div class="section-header">
-            <a class="btn btn-primary">Add Size</a>
-        </div>
         @if ( count($errors) > 0 )
             @foreach( $errors->all() as $error )
                 <div class="alert alert-warning">{{ $error }}</div>

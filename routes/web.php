@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->middleware(['auth.shop'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
@@ -31,6 +31,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
 //   return "a";
 //})->middleware(['auth.shop']);
 
-Route::get('/edit', function(){
-   return view('edit');
-});
