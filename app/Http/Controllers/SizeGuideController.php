@@ -44,12 +44,12 @@ class SizeGuideController extends Controller
 
         $shop_domain = ShopifyApp::shop()->shopify_domain;
 
-        $shop_id = DB::table('shops')->where('	shopify_domain', "$shop_domain")->first();
-
+        $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
+        dd($shop_id);
         $size = new SizeGuide;
 
         $size->title = $request->title;
-        $size->shop_id = $shop_id;
+        $size->shop_id = $shop_id['id'];
 
 
         $size->save();
