@@ -55,7 +55,7 @@ class SizeGuideController extends Controller
         $size->title = $request->title;
         $size->shop_id = $shop_id->id;
         $size->description = $request->description;
-        $size->sizes = $request->tabel_size;
+        $size->sizes = json_encode($request->tabel_size);
 
         $size->save();
 
