@@ -104,7 +104,24 @@
         ShopifyApp.ready(function() {
             ShopifyApp.Bar.initialize({
                 title: 'Edit Size Guide'
-            })
+            });
+            tinymce.init({
+                selector: '#table-size-description',
+                plugins: 'image',
+                branding: false // To disable "Powered by TinyMCE" branding: false // To disable "Powered by TinyMCE"
+            });
+
+            var mytable = $('#table-size').editTable({
+                data: [['']],           // Fill the table with a js array (this is overridden by the textarea content if not empty)
+                tableClass: 'inputtable',   // Table class, for styling
+                jsonData: false,        // Fill the table with json data (this will override data property)
+                headerCols: false,      // Fix columns number and names (array of column names)
+                maxRows: 99,           // Max number of rows which can be added
+                first_row: true,        // First row should be highlighted?
+                row_template: false,    // An array of column types set in field_templates
+                field_templates: false, // An array of custom field type objects
+
+            });
         });
     </script>
 @endsection
