@@ -6,6 +6,7 @@ use App\SizeGuide;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+//use facade shopifyapp
 use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
 
 class SizeGuideController extends Controller
@@ -45,7 +46,7 @@ class SizeGuideController extends Controller
         $shop_domain = ShopifyApp::shop()->shopify_domain;
 
         $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
-        dd($shop_id);
+        dd($shop_id['id']);
         $size = new SizeGuide;
 
         $size->title = $request->title;
