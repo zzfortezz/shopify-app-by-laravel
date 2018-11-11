@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\SizeGuide;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class SizeGuideController extends Controller
 {
     /**
@@ -39,9 +41,15 @@ class SizeGuideController extends Controller
             'title' => 'required|max:255',
         ] );
 
+        $shop_domain = ShopifyApp::shop()->shopify_domain;
+
+        $shop_id = DB::table('shops')->where('	shopify_domain', $shop_domain)->first();
+
         $size = new SizeGuide;
 
         $size->title = $request->title;
+        $size->shop_id = $shop_id;
+
 
         $size->save();
 
