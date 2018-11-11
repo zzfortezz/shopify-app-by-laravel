@@ -35,7 +35,8 @@ class SizeGuideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        dd($request->all());
     }
 
     /**
@@ -57,7 +58,7 @@ class SizeGuideController extends Controller
      */
     public function edit(SizeGuide $sizeGuide)
     {
-        //
+
     }
 
     /**
