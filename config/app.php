@@ -167,7 +167,6 @@ return [
         /*
          * Application Service Providers...
          */
-        \OhMyBrew\ShopifyApp\ShopifyAppProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
