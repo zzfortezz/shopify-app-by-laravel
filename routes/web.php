@@ -18,6 +18,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
     //Create route with name is data.crete, and uses controler SizeGuideController and call to function store
     Route::post('/data/store', ['uses' => 'SizeGuideController@store', 'as' => 'data.store']);
+
+    Route::get('/data/edit/{id}', [
+        'uses' => 'SizeGuideController@edit',
+        'as' => 'data.edit'
+    ]);
 });
 //Route::post('/data/store', ['uses' => 'SizeGuideController@store ', 'as' => 'data.create']);
 
@@ -25,3 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
 ////    return view('welcome');
 //   return "a";
 //})->middleware(['auth.shop']);
+
+Route::get('/edit', function(){
+   return view('edit');
+});
