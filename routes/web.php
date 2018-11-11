@@ -16,7 +16,6 @@ Route::get('/', function () {
 })->middleware(['auth.shop'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' =>['auth.shop']], function(){
-    Route::get('/data/create', ['as' => 'data.create'], function(){
-       return "Hello";
-    });
+    //Create route with name is data.crete, and uses controler SizeGuideController and call to function store
+    Route::post('/data/store', ['as' => 'data.create', 'uses' => 'SizeGuideController@store ']);
 });
