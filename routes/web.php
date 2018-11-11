@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth.shop'])->name('home');
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
     //Create route with name is data.crete, and uses controler SizeGuideController and call to function store
     Route::post('/data/store', ['uses' => 'SizeGuideController@store ', 'as' => 'data.store']);
-})->middleware(['auth.shop']);
+});
 //Route::post('/data/store', ['uses' => 'SizeGuideController@store ', 'as' => 'data.create']);
 
 //Route::post('/data/store', function () {
