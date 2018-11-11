@@ -49,6 +49,7 @@ class SizeGuideController extends Controller
         //get Shop ID
         $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first('id');
 
+        dd($shop_id);
         //insert or update data if shop_id existed
         $size =  SizeGuide::where('shop_id', $shop_id)->first();
 
