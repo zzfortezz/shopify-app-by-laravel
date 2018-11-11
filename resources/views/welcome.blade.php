@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="table-size">Description</label>
-                                <textarea class="form-control" name="tabel-size" id="table-size" rows="3">
+                                <textarea class="form-control" name="tabel_size" id="table-size" rows="3">
                                     [["Size","Bust","Waist","Hips"],["8","32","25","35"],["10","34","27","37"],["12","36","29","39"]]
                                 </textarea>
                             </div>

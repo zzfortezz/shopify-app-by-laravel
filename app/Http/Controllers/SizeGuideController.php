@@ -39,23 +39,27 @@ class SizeGuideController extends Controller
      */
     public function store(Request $request)
     {
+        //validate data input
         $error = $this->validate( $request,[
             'title' => 'required|max:255',
         ] );
 
         $shop_domain = ShopifyApp::shop()->shopify_domain;
 
-        $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
+        //get Shop ID
+        $shop_id = DB::table('shops')->where('shopify_domain', "$shop_domain")->first('id');
 
-        $size =  SizeGuide::where('shop_id', $shop_id->id)->first();
+        //insert or update data if shop_id existed
+        $size =  SizeGuide::where('shop_id', $shop_id)->first();
 
         $size->title = $request->title;
         $size->shop_id = $shop_id->id;
-
+        $size->description = $request->description;
+        $size->sizes = $request->tabel_size;
 
         $size->save();
 
-
+        //after insert redirect back to route name is home
         return redirect()->route('home');
     }
 
