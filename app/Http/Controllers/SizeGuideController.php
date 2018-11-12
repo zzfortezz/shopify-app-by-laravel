@@ -121,6 +121,7 @@ class SizeGuideController extends Controller
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin: *');
         header("Access-Control-Allow-Headers: Content-Type, *");
-        echo json_encode($sizeguide);
+//        echo json_encode($sizeguide);
+        return response()->json($sizeguide);
     }
 }
