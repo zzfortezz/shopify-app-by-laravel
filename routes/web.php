@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
     ]);
 });
 
-Route::post('/get/size', [
+Route::get('/get/size', [
     'uses' => 'SizeGuideController@show'
 ]);
 //Route::post('/data/store', ['uses' => 'SizeGuideController@store ', 'as' => 'data.create']);
