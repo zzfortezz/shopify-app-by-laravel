@@ -24,7 +24,7 @@
 
                         <div class="form-group">
                             <label for="title-table">Title</label>
-                            <input type="text" class="form-control" name="title" id="title-table" placeholder="ex: T-shirt size">
+                            <input type="text" class="form-control" name="title" id="title-table" placeholder="ex: T-shirt size" value="{{ $sizeguides->sizes  ?? '' }}" >
                         </div>
                         <div class="form-group">
                             <label for="table-size-description">Description</label>
@@ -33,7 +33,11 @@
                         <div class="form-group">
                             <label for="table-size">Description</label>
                             <textarea class="form-control" name="tabel_size" id="table-size" rows="3">
+                                @if ( $sizeguides->sizes != '' )
+                                    {{ $sizeguides->sizes }}
+                                @else
                                     [["Size","Bust","Waist","Hips"],["8","32","25","35"],["10","34","27","37"],["12","36","29","39"]]
+                                @endif
                                 </textarea>
                         </div>
 
@@ -111,6 +115,8 @@
                 plugins: 'image',
                 branding: false // To disable "Powered by TinyMCE" branding: false // To disable "Powered by TinyMCE"
             });
+
+            mytable.loadData(dataArray);
 
             var mytable = $('#table-size').editTable({
                 data: [['']],           // Fill the table with a js array (this is overridden by the textarea content if not empty)
