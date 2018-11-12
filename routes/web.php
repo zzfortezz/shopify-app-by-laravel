@@ -44,6 +44,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
         'as' => 'data.delete'
     ]);
 });
+
+Route::post('/get/size', [
+    'uses' => 'SizeGuideController@show'
+]);
 //Route::post('/data/store', ['uses' => 'SizeGuideController@store ', 'as' => 'data.create']);
 
 //Route::post('/data/store', function () {

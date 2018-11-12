@@ -110,4 +110,14 @@ class SizeGuideController extends Controller
     {
         //
     }
+
+    public function getsize( SizeGuide $sizeGuide, Request $request){
+        $shop_domain = $request->shop;
+        $sizeguide = $sizeGuide::query()->where('shopify_domain', "$shop_domain")->first();
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        header("Access-Control-Allow-Credentials: true");
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Headers: Content-Type, *");
+        echo json_encode($sizeguide);
+    }
 }
