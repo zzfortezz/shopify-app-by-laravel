@@ -1,6 +1,5 @@
 @extends('layouts.master')
 
-{{ var_dump($sizeguides) }}
 @section('content')
     <a href="/shopify-app-by-laravel/edit">click</a>
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
@@ -28,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <label for="table-size-description">Description</label>
-                            <textarea class="form-control" id="table-size-description" name="description" rows="5"></textarea>
+                            <textarea class="form-control" id="table-size-description" name="description" rows="5"> {{ $sizeguides->description }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="table-size">Description</label>
