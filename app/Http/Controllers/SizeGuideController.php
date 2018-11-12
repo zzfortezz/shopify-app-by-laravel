@@ -29,7 +29,7 @@ class SizeGuideController extends Controller
      */
     public function create()
     {
-        return view('home')->with('sizeguieds', [] );
+        return view('edit')->with('sizeguieds', [] );
     }
 
     /**
