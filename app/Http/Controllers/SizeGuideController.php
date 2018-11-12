@@ -116,7 +116,7 @@ class SizeGuideController extends Controller
         $shops = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
         $shop_id = $shops->id;
 
-        $sizeguide = $sizeGuide::query()->where('shop_id', "$shop_domain")->first();
+        $sizeguide = $sizeGuide::query()->where('shop_id', "$shop_id")->first();
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin: *');
