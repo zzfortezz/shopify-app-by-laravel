@@ -84,7 +84,7 @@ class SizeGuideController extends Controller
      */
     public function edit(SizeGuide $sizeGuide)
     {
-        $sizeguide = $sizeGuide::all();
+        $sizeguide = $sizeGuide::all()->first();
         return view('edit')->with('sizeguides', $sizeguide);
     }
 
