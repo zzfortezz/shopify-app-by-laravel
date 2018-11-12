@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="section-header">
-                <a href="{{ route('data.create') }}" class="btn btn-primary">Add Size</a>
+                <a href="{{ route('data.store') }}" class="btn btn-primary">Add Size</a>
             </div>
             <div class="table-responsive">
                 <table class="table">
