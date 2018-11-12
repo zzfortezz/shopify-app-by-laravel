@@ -117,7 +117,7 @@ class SizeGuideController extends Controller
         $shop_id = $shops->id;
 
         $sizeguide = $sizeGuide::query()->where('shop_id', "$shop_id")->first();
-        
-        return response()->json($sizeguide);
+
+        return response()->json($sizeguide, 200);
     }
 }
