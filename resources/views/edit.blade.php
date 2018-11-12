@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+    dd($sizeguides)
     <a href="/shopify-app-by-laravel/edit">click</a>
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
     <div class="container-fluid">
