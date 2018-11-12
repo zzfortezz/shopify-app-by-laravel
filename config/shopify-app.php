@@ -222,14 +222,12 @@ return [
     */
 
     'scripttags' => [
-        /*
+
             [
                 'src' => env('SHOPIFY_SCRIPTTAG_1_SRC', 'https://some-app.com/some-controller/js-method-response'),
                 'event' => env('SHOPIFY_SCRIPTTAG_1_EVENT', 'onload'),
                 'display_scope' => env('SHOPIFY_SCRIPTTAG_1_DISPLAY_SCOPE', 'online_store')
-            ],
-            ...
-        */
+            ]
     ],
 
     /*
@@ -244,11 +242,11 @@ return [
     */
 
     'after_authenticate_job' => [
-        /*
+
             [
-                'job' => env('AFTER_AUTHENTICATE_JOB'), // example: \App\Jobs\AfterAuthenticateJob::class
-                'inline' => env('AFTER_AUTHENTICATE_JOB_INLINE', false) // False = execute inline, true = dispatch job for later
+                'job' => '\App\Jobs\AfterAuthenticateJob::class',
+                'inline' => false
             ],
-        */
+
     ],
 ];
