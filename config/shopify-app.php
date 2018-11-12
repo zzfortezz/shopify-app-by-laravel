@@ -244,7 +244,7 @@ return [
     'after_authenticate_job' => [
 
             [
-                'job' => '\App\Jobs\AfterAuthenticateJob::class',
+                'job' => \App\Jobs\AfterAuthenticateJob::class,
                 'inline' => false
             ],
 

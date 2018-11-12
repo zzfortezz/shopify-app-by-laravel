@@ -2,6 +2,11 @@
 
 @section('content')
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
+    @php
+    $shop = ShopifyApp::shop();
+    $request = $shop->api()->rest('GET', '/admin/script_tags.json');
+    var_dump($request->body);
+    @endphp
     <div class="container">
         <div class="row">
             <div class="section-header">
