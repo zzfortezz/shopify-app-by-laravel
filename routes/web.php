@@ -14,7 +14,7 @@
 Route::get('/', [
     'uses' => 'SizeGuideController@index',
     'as' => 'home'
-])->middleware(['auth.shop'])->name('home');
+])->middleware(['auth.shop']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
 
