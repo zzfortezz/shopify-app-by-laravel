@@ -117,11 +117,7 @@ class SizeGuideController extends Controller
         $shop_id = $shops->id;
 
         $sizeguide = $sizeGuide::query()->where('shop_id', "$shop_id")->first();
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-        header("Access-Control-Allow-Credentials: true");
-        header('Access-Control-Allow-Origin: *');
-        header("Access-Control-Allow-Headers: Content-Type, *");
-//        echo json_encode($sizeguide);
+        
         return response()->json($sizeguide);
     }
 }
