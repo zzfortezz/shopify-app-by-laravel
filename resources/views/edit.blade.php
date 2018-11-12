@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="section-summary">
-                        <h2>Select Currencies</h2>
+                        <h2>Size Guide</h2>
                         <p>Select the currencies that will appear in the Currency Switcher on your website.</p>
                     </div>
                 </div>
