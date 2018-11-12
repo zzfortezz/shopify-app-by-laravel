@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 //use facade shopifyapp
 use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
-use  Illuminate\Http\Response;
 
 class SizeGuideController extends Controller
 {
@@ -112,23 +111,20 @@ class SizeGuideController extends Controller
         //
     }
 
-    public function getsize( SizeGuide $sizeGuide, Request $request, Response $response){
+    public function getsize( SizeGuide $sizeGuide, Request $request){
         $shop_domain = $request->shop;
         $shops = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
         $shop_id = $shops->id;
 
         $sizeguide = $sizeGuide::query()->where('shop_id', "$shop_id")->first();
-        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-        header("Access-Control-Allow-Credentials: true");
-        header('Access-Control-Allow-Origin: *');
-        header("Access-Control-Allow-Headers: Content-Type, *");
+
+        $headers = array(
+            'Access-Control-Allow-Headers' => ' Content-Type, *',
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Credentials' => true,
+            'Access-Control-Allow-Methods' => 'GET'
+            );
 //        echo json_encode($sizeguide);
-        return $response
-            ->withHeaders([
-        'Access-Control-Allow-Methods' => 'GET',
-        'Access-Control-Allow-Credentials' => true,
-        'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Allow-Headers' => 'Content-Type, *'
-            ])->json($sizeguide);
+        return response()->json($sizeguide, 200, $headers);
     }
 }
