@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 //use facade shopifyapp
 use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
+use  Illuminate\Http\Response;
 
 class SizeGuideController extends Controller
 {
@@ -111,7 +112,7 @@ class SizeGuideController extends Controller
         //
     }
 
-    public function getsize( SizeGuide $sizeGuide, Request $request){
+    public function getsize( SizeGuide $sizeGuide, Request $request, Response $response){
         $shop_domain = $request->shop;
         $shops = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
         $shop_id = $shops->id;
@@ -122,7 +123,7 @@ class SizeGuideController extends Controller
         header('Access-Control-Allow-Origin: *');
         header("Access-Control-Allow-Headers: Content-Type, *");
 //        echo json_encode($sizeguide);
-        return response()
+        return $response
             ->withHeaders([
         'Access-Control-Allow-Methods' => 'GET',
         'Access-Control-Allow-Credentials' => true,
