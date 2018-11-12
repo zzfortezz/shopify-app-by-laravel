@@ -21,10 +21,15 @@ body{
   justify-content: flex-end;
   width: 100%;
   
-  a.btn{
-    color:#fff;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-  }
+
+}
+.section-content{
+  padding: 15px;
+  background: #fff;
+}
+.section-header a.btn{
+  color:#fff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
