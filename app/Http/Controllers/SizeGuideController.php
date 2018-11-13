@@ -36,7 +36,8 @@ class SizeGuideController extends Controller
         $collection_smart = [];
         $collection_custom = $shop->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
         $collection_smart = $shop->api()->rest('GET', '/admin/smart_collections.json')->body->smart_collections;
-        var_dump($collection_custom,$collection_smart);
+        $collection_smart = $shop->api()->rest('GET', '/admin/collections.json')->body;
+        var_dump($collection_smart);
         die;
         $all_collection = array_merge($collection_custom,$collection_smart);
 
