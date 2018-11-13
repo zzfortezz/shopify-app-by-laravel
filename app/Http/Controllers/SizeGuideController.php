@@ -35,9 +35,6 @@ class SizeGuideController extends Controller
         $collections[] = $shop->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
         $collections[] = $shop->api()->rest('GET', '/admin/smart_collections.json')->body->smart_collections;
 
-
-
-
         return view('create')->with('collection', $collections);
     }
 
