@@ -49,6 +49,21 @@
                     <div class="section-content">
                         <fieldset class="form-group">
                             <div class="row">
+                                <legend class="col-form-label col-sm-3 pt-0"> Collection
+                                    <small id="emailHelp" class="form-text text-muted">Select collection this size guide will show.</small>
+                                </legend>
+                                <div class="col-sm-9">
+                                    <div class="custom-control custom-radio">
+                                        <select>
+                                            @if ( isset($collection) )
+                                                {{dd($collection)}}
+                                                <option></option>
+                                            @endif
+                                        </select>
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Link</label>
+                                    </div>
+                                </div>
 
                                 <legend class="col-form-label col-sm-3 pt-0"> Text:
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -81,9 +96,7 @@
                                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio1">Link</label>
                                     </div>
-
                                 </div>
-
                             </div>
                         </fieldset>
                     </div>

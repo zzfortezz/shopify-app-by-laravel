@@ -31,7 +31,10 @@ class SizeGuideController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $shop = ShopifyApp::shop();
+        $collection = $shop->api()->rest('GET', '/admin/collects.json');
+
+        return view('create')->with('collection', $collection);
     }
 
     /**
