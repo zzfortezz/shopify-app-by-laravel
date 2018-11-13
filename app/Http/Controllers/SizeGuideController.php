@@ -32,7 +32,7 @@ class SizeGuideController extends Controller
     public function create()
     {
         $shop = ShopifyApp::shop();
-        $collection = $shop->api()->rest('GET', '/admin/custom_collections.json')->body();
+        $collection = $shop->api()->rest('GET', '/admin/custom_collections.json')->body;
 
         return view('create')->with('collection', $collection);
     }
