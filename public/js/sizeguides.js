@@ -8,7 +8,7 @@ $(function(){
     loadCss();
     function loadCss() {
         var link = document.createElement("link");
-        link.href = "https://datta.stickervn.com/shopify-app-by-laravel/public/css/sizeguide-front-end.css";
+        link.href = "https://dattq.stickervn.com/shopify-app-by-laravel/public/css/sizeguide-front-end.css";
         link.type = "text/css";
         link.rel = "stylesheet";
         link.media = "screen,print";
