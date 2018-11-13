@@ -56,9 +56,13 @@
                                     <div class="custom-control custom-radio">
                                         {{dd($collection)}}
                                         <select>
-                                        @if ( isset($collection) )
-                                                <option></option>
-                                            @endif
+                                        @if ( isset($collections) )
+                                            @foreach($collections as $collection)
+                                                @foreach($collection as $item)
+                                                    <option>{{ $item->title }}</option>
+                                                @endforeach
+                                            @endforeach
+                                        @endif
                                         </select>
                                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio1">Link</label>
