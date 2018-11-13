@@ -19,7 +19,7 @@ class SizeGuideController extends Controller
     public function index()
     {
         $shop_domain = ShopifyApp::shop()->shopify_domain;
-        $data = SizeGuide::where('shopify_domain', "$shop_domain")->get();
+        $data = SizeGuide::where('shop_domain', "$shop_domain")->get();
         return view('home')->with('sizeguieds', $data );
         //
     }
