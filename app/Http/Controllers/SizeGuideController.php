@@ -112,7 +112,7 @@ class SizeGuideController extends Controller
 
     public function getsize( SizeGuide $sizeGuide, Request $request){
         $shop_domain = $request->shop;
-        
+
         $sizeguide = DB::table('size_guides')->where('shop_domain', $shop_domain)->first();
 
         $headers = array(

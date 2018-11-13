@@ -5,7 +5,7 @@
     @php
     $shop = ShopifyApp::shop();
     $request = $shop->api()->rest('GET', '/admin/script_tags.json');
-    var_dump($request->body);
+    //var_dump($request->body);
     @endphp
     <div class="container">
         <div class="row">
