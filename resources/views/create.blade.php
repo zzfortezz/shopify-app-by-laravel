@@ -54,9 +54,9 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio">
+                                        {{dd($collection)}}
                                         <select>
-                                            @if ( isset($collection) )
-                                                {{dd($collection)}}
+                                        @if ( isset($collection) )
                                                 <option></option>
                                             @endif
                                         </select>

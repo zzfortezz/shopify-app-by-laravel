@@ -32,9 +32,13 @@ class SizeGuideController extends Controller
     public function create()
     {
         $shop = ShopifyApp::shop();
-        $collection = $shop->api()->rest('GET', '/admin/custom_collections.json')->body;
+        $collection_custom = $shop->api()->rest('GET', '/admin/custom_collections.json')->body;
+        $collection_smart = $shop->api()->rest('GET', '/admin/smart_collections.json')->body;
+        $all_collection = array_merge($collection_custom,$collection_smart);
+        {{dd($all_collection)}}
 
-        return view('create')->with('collection', $collection);
+
+        return view('create')->with('collection', $all_collection);
     }
 
     /**
