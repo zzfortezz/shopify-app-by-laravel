@@ -49,19 +49,13 @@ class SizeGuideController extends Controller
 
         $shop_domain = ShopifyApp::shop()->shopify_domain;
 
-        //get Shop ID
-        $shops = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
-        $shop_id = $shops->id;
-
         //insert or update data if shop_id existed
-        $size =  new SizeGuide;
-
-        $size->title = $request->title;
-        $size->shop_id = $shop_id;
-        $size->description = $request->description;
-        $size->sizes = $request->tabel_size;
-
-        $size->save();
+        SizeGuide::updateOrCreate([ 'shop_domain' => $shop_domain],[
+            'title' => $request->title,
+            'shop_domain' => $shop_domain,
+            'description' => $request->description,
+            'sizes' => $request->tabel_size
+        ]);
 
         //after insert redirect back to route name is home
         return redirect()->route('home');
@@ -84,10 +78,13 @@ class SizeGuideController extends Controller
      * @param  \App\SizeGuide  $sizeGuide
      * @return \Illuminate\Http\Response
      */
-    public function edit(SizeGuide $sizeGuide)
+    public function edit(SizeGuide $sizeGuide, Request $request)
     {
-        $sizeguide = $sizeGuide::all()->first();
-        return view('edit')->with('sizeguides', $sizeguide);
+        $shop_domain = ShopifyApp::shop()->shopify_domain;
+
+        $sizes =  DB::table('size_guides')->where('shop_domain', $shop_domain)->first();
+
+        return view('edit')->with('sizeguides', $sizes);
     }
 
     /**
