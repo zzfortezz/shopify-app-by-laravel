@@ -112,10 +112,8 @@ class SizeGuideController extends Controller
 
     public function getsize( SizeGuide $sizeGuide, Request $request){
         $shop_domain = $request->shop;
-        $shops = DB::table('shops')->where('shopify_domain', "$shop_domain")->first();
-        $shop_id = $shops->id;
-
-        $sizeguide = $sizeGuide::query()->where('shop_id', "$shop_id")->first();
+        
+        $sizeguide = DB::table('size_guides')->where('shop_domain', $shop_domain)->first();
 
         $headers = array(
             'Access-Control-Allow-Headers' => ' Content-Type, *',
