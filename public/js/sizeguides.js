@@ -5,4 +5,13 @@ $(function(){
 
     var h = document.getElementById("myH2");
     h.insertAdjacentHTML("afterend", $('#ProductPrice'));*/
+    loadCss();
+    function loadCss() {
+        var link = document.createElement("link");
+        link.href = "https://datta.stickervn.com/shopify-app-by-laravel/public/css/sizeguide-front-end.css";
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.media = "screen,print";
+        document.getElementsByTagName("head")[0].appendChild(link);
+    }
 });
