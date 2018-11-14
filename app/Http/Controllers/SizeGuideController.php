@@ -152,6 +152,6 @@ class SizeGuideController extends Controller
             }
         }
 
-        return $data;
+        return response($data);
     }
 }
