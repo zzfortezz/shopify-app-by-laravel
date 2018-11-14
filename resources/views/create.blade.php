@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-    <a href="/shopify-app-by-laravel/edit">click</a>
-    <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
     <div class="container-fluid">
         @if ( count($errors) > 0 )
             @foreach( $errors->all() as $error )
@@ -68,7 +66,7 @@
                                 <div class="col-sm-9">
                                     <div class="custom-control custom-radio value-condition-wrapper">
                                         <select class="value-condition selection-js">
-                                        
+
                                         </select>
                                     </div>
                                 </div>
@@ -147,7 +145,7 @@
 
             });
 
-            $('.jselection-js').select2();
         });
+        $('.jselection-js').select2();
     </script>
 @endsection
