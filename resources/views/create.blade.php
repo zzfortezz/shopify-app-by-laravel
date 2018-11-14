@@ -68,8 +68,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="value-condition-wrapper">
-                                                <select name="" class=" form-control value-condition selection-js  w-100" multiple="multiple">
-                                                    <option>Select option</option>
+                                                <select name="" class="form-control value-condition w-100" multiple="multiple">
                                                 </select>
                                             </div>
                                         </div>
@@ -181,7 +180,7 @@
                             });
                             $('.value-condition').html(html_option);
 
-                            $('.value-condition').select2("destroy").select2();
+                            $('.value-condition').select2();
                         }
                     },
                     error: function (resp) {
