@@ -132,7 +132,7 @@ class SizeGuideController extends Controller
     }
 
     public function get_condition( Request $request){
-        $shop_domain = $this->shop_domain;
+        $shop_domain = ShopifyApp::shop()->shopify_domain;
         $condition = $request->condition;
         $data = '';
         if ( isset($condition) && $condition != '' ){
