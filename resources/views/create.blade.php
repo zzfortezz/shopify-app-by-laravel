@@ -58,17 +58,17 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="custom-control condition-wrapper">
-                                                <!--<select name="condition" class="selection-js w-100">
+                                                <select name="condition" class="selection-js w-100 form-control">
                                                     <option>Select an option</option>
                                                     <option value="product">Products</option>
                                                     <option value="collection">Collections</option>
                                                     <option value="tag">Tags</option>
-                                                </select>-->
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="custom-control value-condition-wrapper">
-                                                <select name="" class="value-condition selection-js  w-100" multiple="multiple">
+                                                <select name="" class=" form-control value-condition selection-js  w-100" multiple="multiple">
                                                     <option>Select option</option>
                                                 </select>
                                             </div>
