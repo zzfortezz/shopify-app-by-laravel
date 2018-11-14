@@ -143,6 +143,7 @@ class SizeGuideController extends Controller
     public function get_condition( Request $request){
         $shop_domain = $this->shop_domain;
         $condition = $request->condition;
+        $data = '';
         if ( isset($condition) && $condition != '' ){
             switch ($condition){
                 case 'product':
