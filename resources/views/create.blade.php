@@ -173,14 +173,14 @@
                         if( resp.success ){
                             var html_option = '';
                             var $data = resp.data[0];
-                           /* resp.data.each(function (idx, value){
+                            $data.each(function (idx, value){
                                 const{id, title} = value;
                                 html_option +="<option value='" + value.id + "'>" + value.title + "</option>";
                                 console.log('<option value="${id}">${title}<option>');
-                            });*/
+                            });
                             $('.value-condition').html(html_option);
                             console.log({html_option});
-                            console.table([resp.data]);
+                            console.table([$data]);
                         }
                     },
                     error: function (resp) {
