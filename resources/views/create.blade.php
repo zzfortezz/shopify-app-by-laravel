@@ -165,6 +165,7 @@
                 $.ajax({
                     type: 'GET',
                     data:{
+                        "_token": "{{ csrf_token() }}",
                         condition: value
                     },
                     url: './get/condition',

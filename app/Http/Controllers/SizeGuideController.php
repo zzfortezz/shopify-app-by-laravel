@@ -135,11 +135,22 @@ class SizeGuideController extends Controller
         $shop_domain = ShopifyApp::shop()->shopify_domain;
         $shopify = ShopifyApp::shop();
         $condition = $request->condition;
-        $data = '';
+        $data = [
+            'success' => false,
+            'msg' => 'Data Error!'
+        ];
         if ( isset($condition) && $condition != '' ){
             switch ($condition){
                 case 'product':
-                    $data = $shopify->api()->rest('GET', '/admin/products.json?fields=id,title')->body->products;
+                    $product_data = $shopify->api()->rest('GET', '/admin/products.json?fields=id,title')->body->products;
+                    $product_data = json_decode( $product_data );
+                    if( !empty($produc_data) && count( $product_data > 0 ) ){
+                        $data = [
+                            'success' => true,
+                            'msg' => 'Success',
+                            'data' =>$produc_data
+                        ];
+                    }
                     break;
                 case 'collection':
                     $collections[] = $shopify->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
