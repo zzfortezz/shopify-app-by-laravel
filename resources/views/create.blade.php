@@ -172,11 +172,12 @@
                     success: function (resp){
                         if( resp.success ){
                             var html_option = '';
-                            resp.data.each(function (idx, value){
+                            console.log(typeof resp.data);
+                           /* resp.data.each(function (idx, value){
                                 const{id, title} = value;
                                 html_option +="<option value='" + value.id + "'>" + value.title + "</option>";
                                 console.log('<option value="${id}">${title}<option>');
-                            });
+                            });*/
                             $('.value-condition').html(html_option);
                             console.log({html_option});
                             console.table([resp.data]);
