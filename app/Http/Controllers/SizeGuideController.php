@@ -133,16 +133,17 @@ class SizeGuideController extends Controller
 
     public function get_condition( Request $request){
         $shop_domain = ShopifyApp::shop()->shopify_domain;
+        $shopify = ShopifyApp::shop();
         $condition = $request->condition;
         $data = '';
         if ( isset($condition) && $condition != '' ){
             switch ($condition){
                 case 'product':
-                    $data = $this->shopify->api()->rest('GET', '/admin/products.json')->body->products;
+                    $data = $shopify->api()->rest('GET', '/admin/products.json')->body->products;
                     break;
                 case 'collection':
-                    $collections[] = $this->shopify->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
-                    $collections[] = $this->shopify->api()->rest('GET', '/admin/smart_collections.json')->body->smart_collections;
+                    $collections[] = $shopify->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
+                    $collections[] = $shopify->api()->rest('GET', '/admin/smart_collections.json')->body->smart_collections;
                     foreach ($collections as $collection){
                         foreach ($collection as $collect){
                             $data[]= $collect;
