@@ -11,15 +11,6 @@ use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
 
 class SizeGuideController extends Controller
 {
-    private $shop_domain;
-    private $shopify;
-
-    public function __construct()
-    {
-        $this->shop_domain = ShopifyApp::shop()->shopify_domain;
-        $this->shopify = ShopifyApp::shop();
-    }
-
     /**
      * Display a listing of the resource.
      *
