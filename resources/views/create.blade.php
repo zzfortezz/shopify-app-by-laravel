@@ -174,8 +174,6 @@
                     error: function (resp) {
                         console.log('get data error');
                     }
-
-                    }
                 })
             })
         }
