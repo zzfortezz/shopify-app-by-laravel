@@ -172,7 +172,7 @@
                     success: function (resp){
                         if( resp.success ){
                             var html_option = '';
-                            console.log(typeof resp.data);
+                            var $data = resp.data[0];
                            /* resp.data.each(function (idx, value){
                                 const{id, title} = value;
                                 html_option +="<option value='" + value.id + "'>" + value.title + "</option>";

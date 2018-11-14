@@ -147,7 +147,7 @@ class SizeGuideController extends Controller
                         $data = [
                             'success' => true,
                             'msg' => 'Success',
-                            'data' =>$product_data
+                            'data' =>json_encode($product_data)
                         ];
                     }
                     break;
