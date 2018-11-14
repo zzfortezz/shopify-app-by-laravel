@@ -1,4 +1,8 @@
 @extends('layouts.master')
+@section('styles')
+    @parent
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endsection
 
 @section('content')
     <a href="/shopify-app-by-laravel/edit">click</a>
@@ -53,18 +57,19 @@
                                     <small id="emailHelp" class="form-text text-muted">Select collection this size guide will show.</small>
                                 </legend>
                                 <div class="col-sm-9">
-                                    <div class="custom-control custom-radio">
-                                        <select>
-                                        @if ( isset($collections) )
-                                            @foreach($collections as $collection)
-                                                @foreach($collection as $item)
-                                                    <option>{{ $item->title }}</option>
-                                                @endforeach
-                                            @endforeach
-                                        @endif
+                                    <div class="custom-control custom-radio condition-wrapper">
+                                        <select name="condition" class="selection-js">
+                                            <option value="product">Products</option>
+                                            <option value="collection">Collections</option>
+                                            <option value="tag">Tags</option>
                                         </select>
-                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio1">Link</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="custom-control custom-radio value-condition-wrapper">
+                                        <select class="value-condition selection-js">
+                                        
+                                        </select>
                                     </div>
                                 </div>
 
@@ -114,6 +119,7 @@
 
 @section('scripts')
     @parent
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript">
         // ESDK page and bar title
         window.mainPageTitle = 'Welcome Page';
@@ -140,6 +146,8 @@
                 field_templates: false, // An array of custom field type objects
 
             });
+
+            $('.jselection-js').select2();
         });
     </script>
 @endsection
