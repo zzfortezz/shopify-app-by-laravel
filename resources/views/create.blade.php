@@ -170,8 +170,13 @@
                     },
                     url: './get/condition',
                     success: function (resp){
-                        if( resp.status ){
-                            console.log(resp)
+                        if( resp.success ){
+                            var html_option = '';
+                            resp.data.each(function (idx, value){
+                                html_option +="<option value='" + value.id + "'>" + value.title + "</option>";
+                            });
+                            $('.value-condition').html(html_option);
+                            console.log({resp,html_option});
                         }
                     },
                     error: function (resp) {
