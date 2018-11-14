@@ -59,6 +59,7 @@
                                         <div class="col-sm-6">
                                             <div class="custom-control condition-wrapper">
                                                 <select name="condition" class="selection-js w-100">
+                                                    <option>Select an option</option>
                                                     <option value="product">Products</option>
                                                     <option value="collection">Collections</option>
                                                     <option value="tag">Tags</option>
@@ -68,7 +69,7 @@
                                         <div class="col-sm-6">
                                             <div class="custom-control value-condition-wrapper">
                                                 <select class="value-condition selection-js  w-100" multiple="multiple">
-                                                    <option></option>
+                                                    <option>Select option</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -155,5 +156,28 @@
             selectOnClose: true,
             allowClear: true
         });
+
+        selection_condition();
+
+        function selection_condition(){
+            $('.condition-wrapper .selection-js').on('change',function (){
+                var value = $(this).val();
+                $.ajax({
+                    type: 'GET',
+                    data:{
+                        condition: value
+                    },
+                    url: '/get/condition',
+                    success: function (resp){
+                        console.log(resp)
+                    },
+                    error: function (resp) {
+                        console.log('get data error');
+                    }
+
+                    }
+                })
+            })
+        }
     </script>
 @endsection

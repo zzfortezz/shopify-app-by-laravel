@@ -11,6 +11,15 @@ use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
 
 class SizeGuideController extends Controller
 {
+    private $shop_domain;
+    private $shopify;
+
+    public function SizeGuideController()
+    {
+        $this->shop_domain = ShopifyApp::shop()->shopify_domain;
+        $this->shopify = ShopifyApp::shop();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -129,5 +138,28 @@ class SizeGuideController extends Controller
             );
 //        echo json_encode($sizeguide);
         return response()->json($sizeguide, 200, $headers);
+    }
+
+    public function get_condition( Request $request){
+        $shop_domain = $this->shop_domain;
+        $condition = $request->condition;
+        if ( isset($condition) && $condition != '' ){
+            switch ($condition){
+                case 'product':
+                    $data = $this->shopify->api()->rest('GET', '/admin/products.json')->body->products;
+                    break;
+                case 'collection':
+                    $collections[] = $this->shopify->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
+                    $collections[] = $this->shopify->api()->rest('GET', '/admin/smart_collections.json')->body->smart_collections;
+                    foreach ($collections as $collection){
+                        foreach ($collection as $collect){
+                            $data[]= $collect;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        return $data;
     }
 }
