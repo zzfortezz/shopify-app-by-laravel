@@ -167,7 +167,7 @@
                     data:{
                         condition: value
                     },
-                    url: '/get/condition',
+                    url: 'public/get/condition',
                     success: function (resp){
                         console.log(resp)
                     },
