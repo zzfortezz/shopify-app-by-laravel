@@ -54,8 +54,8 @@
                                 <legend class="col-form-label col-sm-3 pt-0"> Collection
                                     <small id="emailHelp" class="form-text text-muted">Select collection this size guide will show.</small>
                                 </legend>
-                                <div class="col-sm-9">
-                                    <div class="custom-control custom-radio condition-wrapper">
+                                <div class="col-sm-6">
+                                    <div class="custom-control condition-wrapper">
                                         <select name="condition" class="selection-js">
                                             <option value="product">Products</option>
                                             <option value="collection">Collections</option>
@@ -63,14 +63,14 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-9">
-                                    <div class="custom-control custom-radio value-condition-wrapper">
-                                        <select class="value-condition selection-js">
+                                <div class="col-sm-6">
+                                    <div class="custom-control value-condition-wrapper">
+                                        <select class="value-condition selection-js" multiple="multiple">
 
                                         </select>
                                     </div>
                                 </div>
-
+                                <div class="w-100"></div>
                                 <legend class="col-form-label col-sm-3 pt-0"> Text:
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </legend>
