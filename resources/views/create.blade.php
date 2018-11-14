@@ -173,15 +173,15 @@
                         if( resp.success ){
                             var html_option = '';
                             var $data = resp.data;
-                            console.log( typeof $data, $data);
+
                             $.each($data,function (idx, value){
                                 const{id, title} = value;
                                 html_option +="<option value='" + value.id + "'>" + value.title + "</option>";
                                 console.log('<option value="${id}">${title}<option>');
                             });
                             $('.value-condition').html(html_option);
-                            console.log({html_option});
-                            console.table([$data]);
+
+                            $('.value-condition').select2("destroy").select2();
                         }
                     },
                     error: function (resp) {
