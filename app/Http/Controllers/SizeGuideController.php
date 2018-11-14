@@ -14,7 +14,7 @@ class SizeGuideController extends Controller
     private $shop_domain;
     private $shopify;
 
-    public function SizeGuideController()
+    public function __construct()
     {
         $this->shop_domain = ShopifyApp::shop()->shopify_domain;
         $this->shopify = ShopifyApp::shop();
