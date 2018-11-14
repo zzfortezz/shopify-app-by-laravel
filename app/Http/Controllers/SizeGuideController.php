@@ -143,15 +143,15 @@ class SizeGuideController extends Controller
             switch ($condition){
                 case 'product':
                     $product_data = $shopify->api()->rest('GET', '/admin/products.json?fields=id,title')->body->products;
+                    var_dump($product_data);
                     if( !empty($product_data) && count( $product_data ) > 0 ){
                         foreach ($product_data as $item){
-                            var_dump($item);
                         }
                         $data = [
                             'success' => true,
                             'msg' => 'Success',
 //                            'new' => $new,
-                            'data' =>json_decode($product_data),
+                            'data' =>$product_data,
                         ];
                     }
                     break;
