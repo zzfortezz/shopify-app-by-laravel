@@ -172,9 +172,9 @@
                     success: function (resp){
                         if( resp.success ){
                             var html_option = '';
-                            var $data = JSON.parse(resp.data);
+                            var $data = resp.data;
                             console.log( typeof $data, $data);
-                            $data.each(function (idx, value){
+                            $.each($data,function (idx, value){
                                 const{id, title} = value;
                                 html_option +="<option value='" + value.id + "'>" + value.title + "</option>";
                                 console.log('<option value="${id}">${title}<option>');
