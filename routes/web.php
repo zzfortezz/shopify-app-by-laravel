@@ -43,13 +43,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.shop'], function(){
         'uses' => 'SizeGuideController@destroy',
         'as' => 'data.delete'
     ]);
-
+    Route::get('/data/get/condition', [
+        'uses' => 'SizeGuideController@get_condition',
+        'as' => 'get.condition'
+    ]);
 
 });
-Route::get('get/condition', [
-    'uses' => 'SizeGuideController@get_condition',
-    'as' => 'get.condition'
-]);
+
 /*
 Route::get('/get/size', [
     'uses' => 'SizeGuideController@getsize'
