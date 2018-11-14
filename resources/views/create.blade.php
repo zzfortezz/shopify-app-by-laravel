@@ -169,7 +169,9 @@
                     },
                     url: './get/condition',
                     success: function (resp){
-                        console.log(resp)
+                        if( resp.status ){
+                            console.log(resp)
+                        }
                     },
                     error: function (resp) {
                         console.log('get data error');

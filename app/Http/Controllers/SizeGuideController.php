@@ -139,14 +139,14 @@ class SizeGuideController extends Controller
         if ( isset($condition) && $condition != '' ){
             switch ($condition){
                 case 'product':
-                    $data = $shopify->api()->rest('GET', '/admin/products.json')->body->products;
+                    $data = $shopify->api()->rest('GET', '/admin/products.json?fields=id,title')->body->products;
                     break;
                 case 'collection':
                     $collections[] = $shopify->api()->rest('GET', '/admin/custom_collections.json')->body->custom_collections;
                     $collections[] = $shopify->api()->rest('GET', '/admin/smart_collections.json')->body->smart_collections;
                     foreach ($collections as $collection){
                         foreach ($collection as $collect){
-                            $data[]= $collect;
+                            var_dump($collect);
                         }
                     }
                     break;
