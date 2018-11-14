@@ -173,7 +173,7 @@
                         if( resp.success ){
                             var html_option = '';
                             var $data = JSON.parse(resp.data);
-                            console.log( typeof $data, $data, resp.new);
+                            console.log( typeof $data, $data);
                             $data.each(function (idx, value){
                                 const{id, title} = value;
                                 html_option +="<option value='" + value.id + "'>" + value.title + "</option>";
