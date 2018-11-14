@@ -57,7 +57,7 @@
                                 <div class="col-sm-9">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="custom-control condition-wrapper">
+                                            <div class="condition-wrapper">
                                                 <select name="condition" class="selection-js w-100 form-control">
                                                     <option>Select an option</option>
                                                     <option value="product">Products</option>
@@ -67,7 +67,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="custom-control value-condition-wrapper">
+                                            <div class="value-condition-wrapper">
                                                 <select name="" class=" form-control value-condition selection-js  w-100" multiple="multiple">
                                                     <option>Select option</option>
                                                 </select>
