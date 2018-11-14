@@ -146,6 +146,6 @@
             });
 
         });
-        $('.jselection-js').select2();
+        $('.selection-js').select2();
     </script>
 @endsection
