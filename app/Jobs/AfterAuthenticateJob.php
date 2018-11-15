@@ -56,10 +56,29 @@ class AfterAuthenticateJob implements ShouldQueue
 
 //        if ( !$this->check_snippets('snippets/dattq.liquid', $theme_id) ){
             //create new file
+        ob_start();
+        ?>
+        <script>
+            window.EcenturaSize = window.EcenturaSize === undefined ? {} : window.EcenturaSize;
+            EcenturaSize.shop = "{{ shop.permanent_domain }}";
+            {% assign t = template | prepend: '/' | append: '.' %}
+            {% if t contains '/product.' %}
+            EcenturaSize.data = {
+                collections: "{{ product.collections | map: 'id' | join: ','}}",
+                tags: {{ product.tags | join: ',' | json}},
+            product: "{{product.id}}",
+                vendor: {{product.vendor | json}},
+            type: {{product.type | json}},
+            title: {{product.title | json}},
+            };
+            {% endif %}
+        </script>
+        <?php
+        $script = ob_end_clean();
             $this->api->rest('PUT', "/admin/themes/$theme_id/assets.json", [
                 "asset" => [
                     "key" => "snippets/dattq.liquid",
-                    "value" => "<p>We are busy updating the store for you and will be back within the hour.</p>"
+                    "value" => $script,
                 ]
             ]);
 //        }
