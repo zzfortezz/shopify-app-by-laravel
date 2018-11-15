@@ -56,7 +56,7 @@
                                 </legend>
                                 <div class="col-sm-9">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="condition-wrapper">
                                                 <select name="condition" class="selection-js w-100 form-control">
                                                     <option>Select an option</option>
@@ -66,7 +66,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-8">
                                             <div class="value-condition-wrapper">
                                                 <select name="" class=" form-control value-condition selection-js  w-100" multiple="multiple">
                                                     <option>Select option</option>
@@ -154,7 +154,8 @@
         });
         $('.selection-js').select2({
             selectOnClose: true,
-            allowClear: true
+            allowClear: true,
+            containerCssClass: 'admin-condition-container'
         });
 
         selection_condition();
