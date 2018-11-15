@@ -84,7 +84,15 @@ class AfterAuthenticateJob implements ShouldQueue
         ]);
 
         $content = $this->api->rest('GET',"/admin/themes/$theme_id/assets.json?asset[key]=layout/theme.liquid")->body->asset;
-        $temp = str_replace('<head>','<head>{{include "dattq.liquid"}}',$content);
+        $temp = str_replace('<head>','<head>{{include "dattq.liquid"}}',$content->value);
+
+        $this->api->rest('PUT', "/admin/themes/$theme_id/assets.json", [
+            "asset" => [
+                "key" => "snippets/dattq.liquid",
+                "value" => $temp,
+            ]
+        ]);
+
 
     }
 
