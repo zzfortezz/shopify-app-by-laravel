@@ -7,7 +7,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use OhMyBrew\ShopifyApp\Facades\ShopifyApp;
+use OhMyBrew\ShopifyApp\Models\Shop;
 
 class AfterAuthenticateJob implements ShouldQueue
 {
@@ -21,7 +21,7 @@ class AfterAuthenticateJob implements ShouldQueue
     private $shopify;
     private  $api;
 
-    public function __construct(ShopifyApp $shopify)
+    public function __construct(Shop $shopify)
     {
         $this->shopify = $shopify;
         $this->api = $shopify->api();
