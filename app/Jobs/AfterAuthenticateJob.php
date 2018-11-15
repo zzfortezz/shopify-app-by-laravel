@@ -54,7 +54,7 @@ class AfterAuthenticateJob implements ShouldQueue
             return;
         }
 
-        if ( !$this->check_snippets('snippets/dattq.liquid', $theme_id) ){
+//        if ( !$this->check_snippets('snippets/dattq.liquid', $theme_id) ){
             //create new file
             $this->api->rest('PUT', "/admin/themes/$theme_id/assets.json", [
                 "asset" => [
@@ -62,7 +62,7 @@ class AfterAuthenticateJob implements ShouldQueue
                     "value" => "<p>We are busy updating the store for you and will be back within the hour.</p>"
                 ]
             ]);
-        }
+//        }
     }
 
     /**
