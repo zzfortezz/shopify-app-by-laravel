@@ -67,8 +67,14 @@ class SizeGuideController extends Controller
 
         $id_products = $request->value_condition;
         var_dump($id_products);
+        foreach ($id_products as $id_product){
+            $result = SizeGuideRelations::updateOrCreate(['id_product' => $id_product],[
+                'id_product' => $id_product,
+                'id_size_guide' => $id_size_guide
+            ]);
+            echo $result->id;
+        }
         die();
-        SizeGuideRelations::updateOrCreate(['id_product' => $id_product]);
 
         //after insert redirect back to route name is home
         return redirect()->route('home');
