@@ -153,6 +153,7 @@
 
         });
         $('.selection-js').select2({
+            placeholder: "",
             selectOnClose: true,
             allowClear: true,
             containerCssClass: 'admin-condition-container'
