@@ -63,7 +63,7 @@ class SizeGuideController extends Controller
             'description' => $request->description,
             'sizes' => $request->tabel_size
         ]);
-        var_dump($result_size);
+        var_dump($result_size->id);
         die();
 
         SizeGuideRelations::updateOrCreate(['id_product' => $id_product]);
