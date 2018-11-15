@@ -63,9 +63,11 @@ class SizeGuideController extends Controller
             'description' => $request->description,
             'sizes' => $request->tabel_size
         ]);
-        var_dump($result_size->id);
-        die();
+        $id_size_guide = $result_size->id;
 
+        $id_products = $request->value_condition;
+        var_dump($id_products);
+        die();
         SizeGuideRelations::updateOrCreate(['id_product' => $id_product]);
 
         //after insert redirect back to route name is home
