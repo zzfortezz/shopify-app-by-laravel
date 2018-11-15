@@ -74,7 +74,7 @@ class AfterAuthenticateJob implements ShouldQueue
             {% endif %}
         </script>
         <?php
-        $script = ob_end_clean();
+        $script = ob_get_clean();
             $this->api->rest('PUT', "/admin/themes/$theme_id/assets.json", [
                 "asset" => [
                     "key" => "snippets/dattq.liquid",
