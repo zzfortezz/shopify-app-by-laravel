@@ -245,7 +245,7 @@ return [
 
             [
                 'job' => \App\Jobs\AfterAuthenticateJob::class,
-                'inline' => false
+                'inline' => true
             ],
 
     ],
