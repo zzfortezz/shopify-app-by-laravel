@@ -4,8 +4,8 @@
     <p>You are: {{ ShopifyApp::shop()->shopify_domain }}</p>
     @php
     $shop = ShopifyApp::shop();
-    $request = $shop->api()->rest('GET',"/admin/themes/43339317315/assets.json?asset[key]=layout/theme.liquid")->body;
-    var_dump($request->asset);
+//    $request = $shop->api()->rest('GET',"/admin/themes/43339317315/assets.json?asset[key]=layout/theme.liquid")->body;
+//    var_dump($request->asset);
     @endphp
     <div class="container">
         <div class="row">
