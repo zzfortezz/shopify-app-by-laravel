@@ -73,6 +73,7 @@ class AfterAuthenticateJob implements ShouldQueue
             };
             {% endif %}
         </script>
+        <p> content test</p>
         <?php
         $script = ob_get_clean();
             $this->api->rest('PUT', "/admin/themes/$theme_id/assets.json", [
