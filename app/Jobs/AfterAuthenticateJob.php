@@ -78,7 +78,7 @@ class AfterAuthenticateJob implements ShouldQueue
             $this->api->rest('PUT', "/admin/themes/$theme_id/assets.json", [
                 "asset" => [
                     "key" => "snippets/dattq.liquid",
-                    "value" => 'done',
+                    "value" => $script,
                 ]
             ]);
 //        }
