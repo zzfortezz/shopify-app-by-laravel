@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <div class="value-condition-wrapper">
-                                                <select name="value-condition" class="form-control value-condition selection-js w-100" multiple="multiple">
+                                                <select name="value-condition[]" class="form-control value-condition selection-js w-100" multiple="multiple">
                                                     <option>Select option</option>
                                                 </select>
                                             </div>
