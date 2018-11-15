@@ -208,7 +208,7 @@ return [
     'webhooks' => [
             [
                 'topic' => 'app/uninstalled',
-                'address' => 'https://dattq.stickervn.com/shopify-app-by-laravel/webhook/app-uninstalled'
+                'address' => 'https://dattq.stickervn.com/shopify-app-by-laravel/public/webhook/app-uninstalled'
             ],
     ],
 
