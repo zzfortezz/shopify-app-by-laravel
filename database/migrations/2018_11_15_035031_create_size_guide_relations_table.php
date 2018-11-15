@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SizeGuideRelation extends Migration
+class CreateSizeGuideRelationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class SizeGuideRelation extends Migration
      */
     public function up()
     {
-        Schema::create('size_relation', function (Blueprint $table) {
+        Schema::create('size_guide_relations', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->bigInteger('id_product');
@@ -28,6 +28,6 @@ class SizeGuideRelation extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('size_relation');
+        Schema::dropIfExists('size_guide_relations');
     }
 }

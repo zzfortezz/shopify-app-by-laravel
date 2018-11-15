@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\SizeGuide;
+use App\SizeGuideRelations;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -56,12 +57,16 @@ class SizeGuideController extends Controller
         $shop_domain = ShopifyApp::shop()->shopify_domain;
 
         //insert or update data if shop_id existed
-        SizeGuide::updateOrCreate([ 'shop_domain' => $shop_domain],[
+        $result_size = SizeGuide::create([
             'title' => $request->title,
             'shop_domain' => $shop_domain,
             'description' => $request->description,
             'sizes' => $request->tabel_size
         ]);
+        var_dump($result_size);
+        die();
+
+        SizeGuideRelations::updateOrCreate(['id_product' => $id_product]);
 
         //after insert redirect back to route name is home
         return redirect()->route('home');
