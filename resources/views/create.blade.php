@@ -157,7 +157,7 @@
             selectOnClose: true,
             allowClear: true,
             containerCssClass: 'admin-condition-container',
-            dropdownCssClass:'.select2-results-dropdown'
+            dropdownCssClass: 'select2-results-dropdown'
         });
 
         selection_condition();
@@ -185,6 +185,7 @@
                             $('.value-condition').html(html_option);
 
                             $('.value-condition').select2("destroy").select2();
+                            $('.value-condition').focus();
                         }
                     },
                     error: function (resp) {
