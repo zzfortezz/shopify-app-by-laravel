@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <div class="value-condition-wrapper">
-                                                <select name="" class=" form-control value-condition selection-js  w-100" multiple="multiple">
+                                                <select name="" class="form-control value-condition selection-js w-100" multiple="multiple">
                                                     <option>Select option</option>
                                                 </select>
                                             </div>
@@ -123,7 +123,7 @@
 
 @section('scripts')
     @parent
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.6-rc.1/dist/js/select2.full.min.js" integrity="sha256-n/FUJcp72w82fuVhPucp19yBCClffj1kYQBAj4HjPIQ=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         // ESDK page and bar title
         window.mainPageTitle = 'Welcome Page';
