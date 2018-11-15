@@ -156,7 +156,8 @@
             placeholder: "",
             selectOnClose: true,
             allowClear: true,
-            containerCssClass: 'admin-condition-container'
+            containerCssClass: 'admin-condition-container',
+            dropdownCssClass:'.select2-results-dropdown'
         });
 
         selection_condition();
